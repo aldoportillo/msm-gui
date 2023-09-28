@@ -17,7 +17,7 @@
       Name
     </label>
 
-    <input type="text" id="name_box" name="query_name" value=<%= @the_actor.name %>>
+    <input type="text" id="name_box" name="query_name" value="<%= @the_actor.name %>">
   </div>
 
   <div>
@@ -146,7 +146,7 @@
         
         <% matching_directors = Director.where({ :id => d_id }) %>
         
-        <% the_director = matching_directors.at(0) %>
+        <% the_director = matching_directors.first) %>
 
         <%= the_director.name %>
       </td>

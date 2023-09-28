@@ -56,14 +56,14 @@ class DirectorsController < ApplicationController
 
     id = params.fetch("path_id")
 
-    @director = Director.where({:id => id}).first
+    director = Director.where({:id => id}).first
 
-    @director.name = params.fetch("query_name")
-    @director.dob = params.fetch("query_dob")
-    @director.bio = params.fetch("query_bio")
-    @director.image = params.fetch("query_image")
+    director.name = params.fetch("query_name")
+    director.dob = params.fetch("query_dob")
+    director.bio = params.fetch("query_bio")
+    director.image = params.fetch("query_image")
 
-    @director.save
+    director.save
 
     redirect_to("/directors/#{id}")
 
