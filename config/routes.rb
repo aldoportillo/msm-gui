@@ -8,17 +8,17 @@ Rails.application.routes.draw do
   get("/directors/:path_id", { :controller => "directors", :action => "show" })
   get("/delete_director/:path_id", {:controller => "directors", :action => "delete"})
   post("/insert_director", {:controller => "directors", :action => "create" })
-  post("/update_director", {:controller => "directors", :action => "update" })
+  post("/modify_director/:path_id", {:controller => "directors", :action => "update" })
 
   get("/movies", { :controller => "movies", :action => "index" })
   get("/movies/:path_id", { :controller => "movies", :action => "show" })
   get("/delete_movie/:path_id", {:controller => "movies", :action => "delete"})
   post("/insert_movie", {:controller => "movies", :action => "create" })
-  post("/update_movie", {:controller => "movies", :action => "update" })
+  post("/modify_movie/:path_id", {:controller => "movies", :action => "update" })
   
   get("/actors", { :controller => "actors", :action => "index" })
   get("/actors/:path_id", { :controller => "actors", :action => "show" })
   get("/delete_actor/:path_id", {:controller => "actors", :action => "delete"})
   post("/insert_actor", {:controller => "actors", :action => "create" })
-  post("/update_actor", {:controller => "actors", :action => "update" })
+  post("/modify_actor/:path_id", {:controller => "actors", :action => "update" })
 end
