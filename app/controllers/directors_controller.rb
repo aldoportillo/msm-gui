@@ -48,6 +48,8 @@ class DirectorsController < ApplicationController
     director.image = params.fetch("query_image")
 
     director.save
+
+    redirect_to("/directors")
   end
 
   def update

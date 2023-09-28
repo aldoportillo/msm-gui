@@ -27,6 +27,8 @@ class MoviesController < ApplicationController
     movie.director_id = params.fetch("query_director_id")
 
     movie.save
+
+    redirect_to("/movies")
   end
 
   def update

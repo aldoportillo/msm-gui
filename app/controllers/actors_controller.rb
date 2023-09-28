@@ -24,6 +24,8 @@ class ActorsController < ApplicationController
     actor.image = params.fetch("query_image")
 
     actor.save
+
+    redirect_to("/actors")
   end
 
   def update
