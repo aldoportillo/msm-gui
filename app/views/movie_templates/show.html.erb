@@ -5,6 +5,11 @@
 <a href="/movies">
   Go back
 </a>
+<div>
+  <a href="/delete_movie/<%= @the_id %>">
+    Delete movie
+  </a>
+</div>
 <hr>
 
 <form action="/modify_movie/<%= @the_id %>" method="post">
@@ -13,7 +18,7 @@
       Title
     </label>
 
-    <input type="text" id="title_box" name="query_title" value=<%= @the_movie.title %>>
+    <input type="text" id="title_box" name="query_title" value="<%= @the_movie.title %>">
   </div>
 
   <div>
