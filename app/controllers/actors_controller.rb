@@ -47,7 +47,8 @@ class ActorsController < ApplicationController
 
     id = params.fetch("path_id")
 
-    Actor.destroy(Actor.where({:id => id}).first)
+    Actor.destroy(id)
 
+    redirect_to("/actors")
   end
 end
