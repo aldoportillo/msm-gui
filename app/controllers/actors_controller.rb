@@ -30,14 +30,14 @@ class ActorsController < ApplicationController
 
     id = params.fetch("path_id")
 
-    actor = Actor.where({:id => id}).first
+    @actor = Actor.where({:id => id}).first
 
-    actor.name = params.fetch("query_name")
-    actor.dob = params.fetch("query_dob")
-    actor.bio = params.fetch("query_bio")
-    actor.image = params.fetch("query_image")
+    @actor.name = params.fetch("query_name")
+    @actor.dob = params.fetch("query_dob")
+    @actor.bio = params.fetch("query_bio")
+    @actor.image = params.fetch("query_image")
 
-    actor.save
+    @actor.save
 
     redirect_to("/actors/#{id}")
 
