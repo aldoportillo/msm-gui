@@ -7,9 +7,9 @@ class ActorsController < ApplicationController
   end
 
   def show
-    the_id = params.fetch("path_id")
+    @the_id = params.fetch("path_id")
 
-    matching_actors = Actor.where({ :id => the_id })
+    matching_actors = Actor.where({ :id => @the_id })
     @the_actor = matching_actors.at(0)
       
     render({ :template => "actor_templates/show" })
@@ -39,13 +39,15 @@ class ActorsController < ApplicationController
 
     actor.save
 
+    redirect_to("/actors/#{id}")
+
   end
 
   def delete
 
-    actor = Actor.where({:id => id}).first
+    id = params.fetch("path_id")
 
-    Actor.destroy(actor)
+    Actor.destroy(Actor.where({:id => id}).first)
 
   end
 end
