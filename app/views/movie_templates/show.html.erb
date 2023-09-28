@@ -7,13 +7,13 @@
 </a>
 <hr>
 
-<form action="/modify_movie/22" method="post">
+<form action="/modify_movie/<%= @the_id %>" method="post">
   <div>
     <label for="title_box">
       Title
     </label>
 
-    <input type="text" id="title_box" name="query_title" value="City of God">
+    <input type="text" id="title_box" name="query_title" value=<%= @the_movie.title %>>
   </div>
 
   <div>
@@ -21,7 +21,7 @@
       Year
     </label>
 
-    <input type="text" id="year_box" name="query_year" value="2002">
+    <input type="text" id="year_box" name="query_year" value=<%= @the_movie.year %>>
   </div>
 
   <div>
@@ -29,7 +29,7 @@
       Duration
     </label>
 
-    <input type="text" id="duration_box" name="query_duration" value="130">
+    <input type="text" id="duration_box" name="query_duration" value=<%= @the_movie.duration %>>
   </div>
 
   <div>
@@ -37,7 +37,7 @@
       Description
     </label>
 
-    <textarea id="description_box" name="query_description" rows="3">Cidade de Deus is a shantytown that started during the 1960s and became one of Rio de Janeiro’s most dangerous places in the beginning of the 1980s. To tell the story of this place, the movie describes the life of various characters, all seen by the point of view of the narrator, Buscapé. Buscapé was raised in a very violent environment. Despite the feeling that all odds were against him, he finds out that life can be seen with other eyes...</textarea>
+    <textarea id="description_box" name="query_description" rows="3"><%= @the_movie.description %></textarea>
   </div>
 
   <div>
@@ -45,7 +45,7 @@
       Image
     </label>
 
-    <input type="text" id="image_box" name="query_image" value="https://image.tmdb.org/t/p/w500/mG7YgoeA4ortmwcrtbkIEQjexSB.jpg">
+    <input type="text" id="image_box" name="query_image" value=<%= @the_movie.image %>>
   </div>
 
   <div>
@@ -53,7 +53,7 @@
       Director ID
     </label>
 
-    <input type="text" id="director_id_box" name="query_director_id" value="8557">
+    <input type="text" id="director_id_box" name="query_director_id" value=<%= @the_movie.director_id %>>
   </div>
 
   <button>
