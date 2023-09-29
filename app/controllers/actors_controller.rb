@@ -10,7 +10,7 @@ class ActorsController < ApplicationController
     @the_id = params.fetch("path_id")
 
     matching_actors = Actor.where({ :id => @the_id })
-    @the_actor = matching_actors.at(0)
+    @the_actor = matching_actors.first
       
     render({ :template => "actor_templates/show" })
   end

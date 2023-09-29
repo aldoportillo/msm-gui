@@ -11,7 +11,7 @@
 
 <hr>
 
-<form action="/modify_actor/504" method="post">
+<form action="/modify_actor/<%= @the_id %>" method="post">
   <div>
     <label for="name_box">
       Name
@@ -25,7 +25,7 @@
       Dob
     </label>
 
-    <input type="date" id="dob_box" name="query_dob" value=<%= @the_actor.dob %>>
+    <input type="date" id="dob_box" name="query_dob" value="<%= @the_actor.dob %>">
   </div>
 
   <div>
@@ -41,7 +41,7 @@
       Image
     </label>
 
-    <input type="text" id="image_box" name="query_image" value=<%= @the_actor.image %>>
+    <input type="text" id="image_box" name="query_image" value="<%= @the_actor.image %>">
   </div>
 
   <button>
@@ -142,11 +142,8 @@
       </td>
 
       <td>
-        <% d_id = the_movie.director_id %>
         
-        <% matching_directors = Director.where({ :id => d_id }) %>
-        
-        <% the_director = matching_directors.first) %>
+        <% the_director = Director.where({:id => the_movie.director_id }).first %>
 
         <%= the_director.name %>
       </td>
